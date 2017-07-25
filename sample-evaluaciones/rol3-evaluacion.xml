@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<quiz>
+  <title>Sample Quiz (2/20/2002)</title>
+    <questions>
+	
+	<!-- Begin Seleccion multiple (41) -->
+    
+      <question>
+        <quizquestion>Pregunta 1?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>
+      
+      <question>
+        <quizquestion>Pregunta 2?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>0</correct>
+      </question>
+      		
+      <question>
+        <quizquestion>Pregunta 3?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>
+      		
+      <question>
+        <quizquestion>Pregunta 4?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>	
+	  
+	  <question>
+        <quizquestion>Pregunta 5?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>
+
+     <question>
+        <quizquestion>Pregunta 6?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>
+
+      <question>
+        <quizquestion>Pregunta 7?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>	 
+
+     <question>
+        <quizquestion>Pregunta 8?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>	
+
+     <question>
+        <quizquestion>Pregunta 9?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>	
+
+     <question>
+        <quizquestion>Pregunta 10?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>	 	   
+	 
+      <question>
+        <quizquestion>Pregunta 11?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>
+      
+      <question>
+        <quizquestion>Pregunta 12?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>0</correct>
+      </question>
+      		
+      <question>
+        <quizquestion>Pregunta 13?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>
+      		
+      <question>
+        <quizquestion>Pregunta 14?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>	
+	  
+	  <question>
+        <quizquestion>Pregunta 15?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>
+
+     <question>
+        <quizquestion>Pregunta 16?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>
+
+      <question>
+        <quizquestion>Pregunta 17?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>	 
+
+     <question>
+        <quizquestion>Pregunta 18?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>	
+
+     <question>
+        <quizquestion>Pregunta 19?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>	
+
+     <question>
+        <quizquestion>Pregunta 20?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>
+
+      <question>
+        <quizquestion>Pregunta 21?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>
+      
+      <question>
+        <quizquestion>Pregunta 22?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>0</correct>
+      </question>
+      		
+      <question>
+        <quizquestion>Pregunta 23?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>
+      		
+      <question>
+        <quizquestion>Pregunta 24?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>	
+	  
+	  <question>
+        <quizquestion>Pregunta 25?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>
+
+     <question>
+        <quizquestion>Pregunta 26?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>
+
+      <question>
+        <quizquestion>Pregunta 27?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>	 
+
+     <question>
+        <quizquestion>Pregunta 28?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>	
+
+     <question>
+        <quizquestion>Pregunta 29?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>	
+
+     <question>
+        <quizquestion>Pregunta 30?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>
+
+      <question>
+        <quizquestion>Pregunta 31?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>
+      
+      <question>
+        <quizquestion>Pregunta 32?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>0</correct>
+      </question>
+      		
+      <question>
+        <quizquestion>Pregunta 33?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>
+      		
+      <question>
+        <quizquestion>Pregunta 34?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>	
+	  
+	  <question>
+        <quizquestion>Pregunta 35?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>
+
+     <question>
+        <quizquestion>Pregunta 36?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>
+
+      <question>
+        <quizquestion>Pregunta 37?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>1</correct>
+      </question>	 
+
+     <question>
+        <quizquestion>Pregunta 38?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>	
+
+     <question>
+        <quizquestion>Pregunta 39?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>2</correct>
+      </question>	
+
+     <question>
+        <quizquestion>Pregunta 40?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>
+
+
+     <question>
+        <quizquestion>Pregunta 41?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>
+	  
+	  <!-- End Seleccion multiple -->
+	   <!-- Sección 2 ordenamiento (1)--> 
+           <!-- Sección 3 Relación de Columnas (3) --> 
+   
+	  <!-- Begin Verdadero / Falso (9)-->
+	  
+	<question>
+        <quizquestion>pregunta 46 ?</quizquestion>
+        <answer>FALSO</answer>
+        <answer>VERDADERO</answer>
+        <correct>0</correct>
+        </question>
+      		
+      <question>
+        <quizquestion>pregunta 47 ?</quizquestion>
+        <answer>FALSO</answer>
+        <answer>VERDADERO</answer>
+        <correct>1</correct>
+        </question>	
+	  
+	  <question>
+        <quizquestion>pregunta 48 ?</quizquestion>
+        <answer>FALSO</answer>
+        <answer>VERDADERO</answer>
+        <correct>0</correct>
+        </question>
+	  
+	  <question>
+        <quizquestion>pregunta 49 ?</quizquestion>
+        <answer>FALSO</answer>
+        <answer>VERDADERO</answer>
+        <correct>0</correct>
+        </question>
+	  
+	 <question>
+        <quizquestion>pregunta 50 ?</quizquestion>
+        <answer>FALSO</answer>
+        <answer>VERDADERO</answer>
+        <correct>0</correct>
+        </question>
+      		
+      <question>
+        <quizquestion>pregunta 51 ?</quizquestion>
+        <answer>FALSO</answer>
+        <answer>VERDADERO</answer>
+        <correct>0</correct>
+        </question>	
+	  
+	<question>
+        <quizquestion>pregunta 52 ?</quizquestion>
+        <answer>FALSO</answer>
+        <answer>VERDADERO</answer>
+        <correct>0</correct>
+        </question>
+	  
+	<question>
+        <quizquestion>pregunta 53 ?</quizquestion>
+        <answer>FALSO</answer>
+        <answer>VERDADERO</answer>
+        <correct>0</correct>
+        </question>
+      		
+      <question>
+        <quizquestion>pregunta 54 ?</quizquestion>
+        <answer>FALSO</answer>
+        <answer>VERDADERO</answer>
+        <correct>0</correct>
+        </question>	
+	  
+	  <!-- End Verdadero / Falso -->
+	  
+	  <!-- Begin Mejor Opcion (1)-->
+	  
+	  <question>
+        <quizquestion>Pregunta 55?</quizquestion>
+        <answer>Respuesta 1</answer>
+        <answer>Respuesta 2</answer>
+        <answer>Respuesta 3</answer>
+        <answer>Respuesta 4</answer>
+        <correct>3</correct>
+      </question>
+	  
+	  <!-- End Mejor Opcion -->
+          
+           <!-- Sección 5 abiertas (2) -->
+
+    </questions>
+</quiz>

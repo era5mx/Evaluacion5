@@ -1,0 +1,78 @@
+//
+// Archivo de configuracion para el gradle
+// Herramienta para la construccion del proyecto
+// y el manejo de dependencias
+//
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = '1.8'
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/java']
+        }
+        resources {
+            srcDirs = ['src/java/conf']
+        }
+    }
+}
+
+repositories {
+   flatDir { dirs "web/WEB-INF/lib" }
+   mavenCentral()
+   //jcenter()
+   maven {
+        url "https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api"
+   }
+}
+
+configurations {
+    // Create new dependency configuration
+    // for dependencies to be added in 
+    // WAR file.
+    warLib.extendsFrom runtime
+}
+
+defaultTasks 'war'
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    providedCompile "javax.servlet:servlet-api:3.0"
+    providedCompile "javax.servlet.jsp:javax.servlet.jsp-api:2.3.1"
+    compile "javax.servlet.jsp.jstl:jstl:1.2"
+    compile "mysql:mysql-connector-java:5.1.6"
+    testCompile "junit:junit:4.12"
+}
+
+war {
+    manifest {
+        attributes(
+            "Manifest-Version": ManifestVersion,
+            "BundleDescription": BundleDescription,
+            "Implementation-Title": project.name, 
+            "Implementation-Version": project.version, 
+            "Implementation-Vendor": ImplementationVendor,
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+            "Built-By":System.getProperty('user.name'),
+            "Built-JDK":System.getProperty('java.version')+ ' ('+System.getProperty('java.vendor')+')',
+            "Build-Time":new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+            "Source-Compatibility":project.sourceCompatibility,
+            "Target-Compatibility":project.targetCompatibility
+        )
+    }
+    archiveName 'evaluacion.war'
+
+    // Add warLib dependency configuration
+    classpath configurations.warLib
+
+    // We remove all duplicate files
+    // with this assignment.
+    // geFiles() method return a unique
+    // set of File objects, removing
+    // any duplicates from configurations
+    // added by classpath() method.
+    classpath = classpath.files
+}
+
