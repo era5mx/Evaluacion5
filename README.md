@@ -3,10 +3,10 @@ Sistema Basico de Evaluacion
 
 Requisitos:
 
-Crear base de datos con el script create_table.sql
-Cargar los examenes en el catalogo
-Configurar el acceso a la base de datos
-Colocar los archivos .xml de los examenes
+- Crear base de datos con el script create_table.sql
+- Cargar los examenes en el catalogo
+- Configurar el acceso a la base de datos
+- Colocar los archivos .xml de los examenes
 
 ## Verificando catalogo de examenes
 
