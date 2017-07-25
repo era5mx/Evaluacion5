@@ -14,7 +14,7 @@ public class Constante {
     /**
      * Habilita (true) / Deshabilita (false) el log de las excepciones manejadas
      */
-    public static final boolean DEBUG_ENABLED = true;
+    public static final boolean DEBUG_ENABLED = false;
     
     /**
      * Ruta donde vive el archivo properties con los datos para la conexion a la base de datos
