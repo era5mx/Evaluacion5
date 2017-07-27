@@ -9,7 +9,7 @@
 <title><% out.println(Constante.TITLE_GRAL); %></title>
 <style type="text/css">
     body {
-        background: url("${pageContext.request.contextPath}/images/background-<% out.print(Constante.BACKGROUND);%>.jpg");
+        background: url("${pageContext.request.contextPath}/images/background/background-<% out.print(Constante.BACKGROUND);%>.jpg");
     }
 </style>
 

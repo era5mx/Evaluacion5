@@ -1,13 +1,22 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * @(#)Constante.java   26/07/2017
+ *
+ * Copyright (c) 2016 David Rengifo
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
  */
 package mx.rengifo.evaluacion.util;
 
 /**
- *
- * @author david
+ * Constantes
+ * @author <a href="david.rengifo.mx">david rengifo</a>
  */
 public class Constante {
 
@@ -24,7 +33,7 @@ public class Constante {
     /**
      * Ruta donde se colocan los archivos xml de las evaluaciones
      */
-    public static final String PATH_EVALUATIONS = "C:\\era5\\evaluaciones";
+    public static final String PATH_EVALUATIONS = "C:\\era5\\evaluaciones\\";
 
     /**
      * Sufijo utilizado en el nombrado de las evaluaciones
@@ -35,7 +44,7 @@ public class Constante {
     /**
      * URL de inmujeres
      */
-    public static final String URL = "http://www.gob.mx/inmujeres/";
+    public static final String URL = "http://www.era5.mx/";
 
     /**
      * Background (white | gray)
@@ -46,5 +55,10 @@ public class Constante {
      * Titulo general del sitio
      */
     public static final String TITLE_GRAL = "Evaluaci&oacute;n en l&iacute;nea ";
+    
+    /**
+     * Formato de fecha
+     */
+    public static final String FORMAT_DATE = "yyyy/MM/dd HH:mm:ss a";
 
 }

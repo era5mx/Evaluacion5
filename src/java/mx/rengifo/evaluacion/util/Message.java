@@ -1,13 +1,22 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * @(#)Message.java   26/07/2017
+ *
+ * Copyright (c) 2016 David Rengifo
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
  */
 package mx.rengifo.evaluacion.util;
 
 /**
- *
- * @author david
+ * Message
+ * @author <a href="david.rengifo.mx">david rengifo</a>
  */
 public class Message {
     
@@ -45,6 +54,11 @@ public class Message {
      * Mensaje de Error al fallar un insert en la base de datos
      */
     public static final String ERROR_MESSAGE_INSERT = "Error : Mientras se insertaba el registro en la base de datos. ";
+
+    /**
+     * Mensaje de Error al fallar un insert en la base de datos
+     */
+    public static final String ERROR_MESSAGE_INSERT_RESULTS = "Error : No se pudieron persistir los resultados del examen ";
 
     /**
      * Mensaje de Error para indicar que no se pudieron persistir los resultados

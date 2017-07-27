@@ -8,6 +8,16 @@ Sistema Basico de Evaluacion
 - Configurar el acceso a la base de datos
 - Colocar los archivos .xml de los examenes
 
+## Creando la base de datos
+
+Uno de los prerequisitos para el funcionamiento de la aplicacion es la creacion de la base de datos
+
+## Archivos de examenes
+
+Uno de los prerequisitos para el funcionamiento de la aplicacion es la colocacion de los archivos de examenes
+Se deben preparar los archivo de examenes (XML) y colocarse en la ruta definida.
+Se incluye en la carpeta sample-evaluaciones algunos archivos que pueden utilizarse como plantilla para esta labor.
+
 ## Verificando catalogo de examenes
 
 Uno de los prerequisitos para el funcionamiento de la aplicacion es la carga del catalogo de examenes
@@ -49,6 +59,9 @@ Puede elegir entre dos opciones: white | gray
 
 Solo hay que ajustar el valor de la constante BACKGROUND
 
+NOTA: Para incorporar otra opcion debe contarse con una imagen background-{color}.jpg
+     en la carpeta images/background
+
 ### Configurando el Titulo
 
 La aplicacion permite configurar el titulo a utilizar. 
@@ -76,9 +89,9 @@ La aplicacion permite configurar la ubicacion de los archivos de las evaluacione
 
 Solo hay que ajustar el valor de la constante PATH_EVALUATIONS
 
-Nota: No debe incluir '\\' al final
+Nota: Debe incluir '\\' al final
 
-### Habilitando / Deshabilita el log de las excepciones manejadas
+### Habilitando / Deshabilitando el log de las excepciones manejadas
 
 La aplicacion permite habilitar el log de las excepciones manejadas para labores de revisión,
 o deshabilitarlo para ambientes productivos.

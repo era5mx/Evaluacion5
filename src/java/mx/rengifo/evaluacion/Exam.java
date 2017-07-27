@@ -1,3 +1,17 @@
+/*
+ * @(#)Exam.java   26/07/2017
+ *
+ * Copyright (c) 2016 David Rengifo
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
 package mx.rengifo.evaluacion;
 
 import mx.rengifo.evaluacion.util.DatabaseConnectionFactory;
@@ -16,26 +30,50 @@ import mx.rengifo.evaluacion.util.CreateDOM;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import mx.rengifo.evaluacion.util.Constante;
+import mx.rengifo.evaluacion.util.Message;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * Examen
- * @author david
+ * @author <a href="david.rengifo.mx">david rengifo</a>
  */
 public class Exam {
     
+    /**
+     * Query para persistir los resultados
+     */
     public static final String INSERT_INTO_QUIZRESULTADOS = "INSERT INTO `quiz`.`resultados` (`username`,`pregunta`,`resultado`) VALUES (?,?,?)";
 
+    /**
+     * Logger
+     */
+    private static final Logger logger = Logger.getLogger(Exam.class.getName());
+    
     Document dom;
     public int currentQuestion = 0;
 
     public Map<Integer, Integer> selections = new LinkedHashMap<Integer, Integer>();
     public ArrayList<QuizQuestion> questionList = new ArrayList<QuizQuestion>(10);
 
+    /**
+     *
+     * @param test
+     * @throws SAXException
+     * @throws ParserConfigurationException
+     * @throws IOException
+     * @throws URISyntaxException
+     */
     public Exam(String test) throws SAXException, ParserConfigurationException, IOException, URISyntaxException {
         dom = CreateDOM.getDOM(test);
     }
 
+    /**
+     *
+     * @param i
+     */
     public void setQuestion(int i) {
         int number = i;
         String options[] = new String[4];
@@ -75,27 +113,46 @@ public class Exam {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<QuizQuestion> getQuestionList() {
         return this.questionList;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCurrentQuestion() {
         return currentQuestion;
     }
 
+    /**
+     *
+     * @return
+     */
     public Map<Integer, Integer> getSelections() {
         return this.selections;
     }
 
+    /**
+     * Calcula el resultado
+     * @param exam
+     * @param username
+     * @return
+     */
     public int calculateResult(Exam exam, String username) {
         int totalCorrect = 0;
         Map<Integer, Integer> userSelectionsMap = exam.selections;
 
         //Se valida y se persisten los resultados
         if (null != userSelectionsMap && StringUtils.isNotBlank(username)) {
-            persisteSelections(userSelectionsMap, username);
+            this.persisteSelections(userSelectionsMap, username);
         } else {
-            System.out.println("No se pudieron persistir los resultados del examen para [" + username + "]");
+            System.out.println(Message.ERROR_MESSAGE_INSERT_RESULTS + " para [" + username + "]");
+            if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_INSERT_RESULTS, userSelectionsMap);}
         }
 
         List<Integer> userSelectionsList = new ArrayList<Integer>(10);
@@ -119,6 +176,11 @@ public class Exam {
         return totalCorrect;
     }
 
+    /**
+     * Persiste la seleccion de resultados
+     * @param userSelectionsMap
+     * @param username 
+     */
     private void persisteSelections(Map<Integer, Integer> userSelectionsMap, String username) {
         for (Map.Entry<Integer, Integer> entry : userSelectionsMap.entrySet()) {
             Integer key = entry.getKey();
@@ -137,13 +199,14 @@ public class Exam {
                 con.commit();
 
             } catch (SQLException sqe) {
-                sqe.printStackTrace();
-                System.out.println("Error : While Inserting record in database");
+                System.out.println(Message.ERROR_MESSAGE_INSERT);
+                if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_INSERT, sqe);}
             } finally {
                 try {
                     con.close();
                 } catch (SQLException se) {
-                    System.out.println("Error : While Closing Connection");
+                    System.out.println(Message.ERROR_MESSAGE_CLOSE_CONNECTION);
+                    if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_CLOSE_CONNECTION, se);}
                 }
             }
         }

@@ -1,8 +1,23 @@
+/*
+ * @(#)ExamController.java   26/07/2017
+ *
+ * Copyright (c) 2016 David Rengifo
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
 package mx.rengifo.evaluacion.controller;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,19 +34,39 @@ import javax.servlet.RequestDispatcher;
 
 /**
  * Servlet implementation class ExamController
+ * @author <a href="david.rengifo.mx">david rengifo</a>
  */
 @WebServlet(urlPatterns = { "/exam", "/exam2", "/exam3" })
 public class ExamController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     
+    /**
+     * Logger
+     */
+    private static final Logger logger = Logger.getLogger(LoginController.class.getName());
+    
     /** Accion */
     public enum Accion {SIGUIENTE, ANTERIOR, FIN}; 
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         boolean finish = false;
@@ -49,7 +84,7 @@ public class ExamController extends HttpServlet {
                 System.out.println("Setting Exam " + selectedExam);
                 Exam newExam = new Exam(selectedExam);
                 session.setAttribute("currentExam", newExam);
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss a");
+                SimpleDateFormat dateFormat = new SimpleDateFormat(Constante.FORMAT_DATE);
                 Date date = new Date();
                 String started = dateFormat.format(date);
                 session.setAttribute("started", started);

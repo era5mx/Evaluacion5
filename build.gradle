@@ -1,8 +1,9 @@
-//
-// Archivo de configuracion para el gradle
-// Herramienta para la construccion del proyecto
-// y el manejo de dependencias
-//
+/* * *
+ * @author <a href="david.rengifo.mx">david rengifo</a>
+ * @descripcion Archivo de configuracion para el gradle
+ *              Herramienta para la construccion del 
+ *              proyecto y el manejo de dependencias
+ */
 apply plugin: 'java'
 apply plugin: 'war'
 
@@ -30,8 +31,7 @@ repositories {
 
 configurations {
     // Create new dependency configuration
-    // for dependencies to be added in 
-    // WAR file.
+    // for dependencies to be added in WAR file.
     warLib.extendsFrom runtime
 }
 

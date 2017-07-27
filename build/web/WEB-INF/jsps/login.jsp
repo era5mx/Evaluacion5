@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
     <style type="text/css">
 body {
-	background: url("${pageContext.request.contextPath}/images/background-<% out.print(Constante.BACKGROUND); %>.jpg");
+	background: url("${pageContext.request.contextPath}/images/background/background-<% out.print(Constante.BACKGROUND); %>.jpg");
 }
 .user-icon {
 	top:153px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */

@@ -1,3 +1,17 @@
+/*
+ * @(#)DatabaseConnectionFactory.java   26/07/2017
+ *
+ * Copyright (c) 2016 David Rengifo
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
 package mx.rengifo.evaluacion.util;
 
 import mx.rengifo.evaluacion.util.Message;
@@ -16,7 +30,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Encapsula la logica para manejar la conexion con la base de datos
- * @author david
+ * @author <a href="david.rengifo.mx">david rengifo</a>
  */
 public class DatabaseConnectionFactory {
 

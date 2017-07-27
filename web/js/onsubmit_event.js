@@ -1,3 +1,7 @@
+/* * *
+ * @author <a href="david.rengifo.mx">david rengifo</a>
+ */
+
 // Below Function Executes On Form Submit Login
 function ValidationEventLogin() {
     // Storing Field Values In Variables

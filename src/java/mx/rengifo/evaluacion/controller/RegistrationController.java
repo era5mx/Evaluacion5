@@ -1,3 +1,17 @@
+/*
+ * @(#)RegistrationController.java   26/07/2017
+ *
+ * Copyright (c) 2016 David Rengifo
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
 package mx.rengifo.evaluacion.controller;
 
 import mx.rengifo.evaluacion.util.DatabaseConnectionFactory;
@@ -5,6 +19,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,11 +30,17 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Servlet implementation class RegistrationController
+ * @author <a href="david.rengifo.mx">david rengifo</a>
  */
 @WebServlet("/checkRegister")
 public class RegistrationController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
+    
+    /**
+     * Logger
+     */
+    private static final Logger logger = Logger.getLogger(RegistrationController.class.getName());
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -28,6 +49,13 @@ public class RegistrationController extends HttpServlet {
         super();
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
