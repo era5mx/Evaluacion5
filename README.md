@@ -23,6 +23,23 @@ SELECT * FROM quiz.examenes;
 
 NOTA: Los nombres de los examenes deben corresponderse con los nombres (sin sufijo) de los xml.
 
+## Configurando el acceso a la base de datos
+
+Para configurar el acceso a la base de datos debemos editar el archivo "dbConnection.properties",
+originalmente ubicado en WEB-INF pero que puede ubicarse en alguna ruta externa al proyecto,  
+y colocar los datos apropiados:
+
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.server=****
+jdbc.port=****
+jdbc.schema=quiz
+jdbc.username=****
+jdbc.password=****
+jdbc.useUnicode=true
+jdbc.useJDBCCompliantTimezoneShift=true
+jdbc.useLegacyDatetimeCode=false
+jdbc.serverTimezone=UTC
+
 ## Verificando el acceso a la base de datos
 
 Para comprobar que hayamos configurado apropiadamente el acceso a la base de datos contamos con un JUnit 
