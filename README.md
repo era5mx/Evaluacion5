@@ -133,4 +133,5 @@ realizaremos un update sobre la tabla quiz.users filtrado por el email del usuar
 SELECT * FROM quiz.users;
 
 
+---
 [David Rengifo](http://david.rengifo.mx/) 2017 &#169; Derechos Reservados &middot; Orgullosamente respaldado por: [eRa5](http://era5.mx/).
