@@ -48,6 +48,7 @@ public class DatabaseConnectionFactory {
         Connection con = null;
         try {
             Properties properties=new Properties();
+            System.out.println("Se cargara el archivo de properties desde: "+Constante.PATH_PROPERTIES+"dbConnection.properties");
             FileInputStream in = new FileInputStream(Constante.PATH_PROPERTIES+"dbConnection.properties");
             properties.load(in);
             System.out.println("Se cargó el archivo de properties");

@@ -113,7 +113,9 @@ public class LoginController extends HttpServlet {
                 if (ps != null && !ps.isClosed()) {
                     ps.close();
                 }
-                con.close();
+                if(con!=null && !con.isClosed()) {
+                    con.close();
+                }
             } catch (SQLException se) {
                 System.out.println("Error : Mientras se cerraba la conexion");
             }

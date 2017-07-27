@@ -28,7 +28,7 @@ public class Constante {
     /**
      * Ruta donde vive el archivo properties con los datos para la conexion a la base de datos
      */
-    public static final String PATH_PROPERTIES = "C:\\Users\\david\\Documents\\NetBeansProjects\\OnlineQuizz\\web\\WEB-INF\\";
+    public static final String PATH_PROPERTIES = "C:\\Users\\david\\Documents\\NetBeansProjects\\Evaluacion5\\web\\WEB-INF\\";
 
     /**
      * Ruta donde se colocan los archivos xml de las evaluaciones
