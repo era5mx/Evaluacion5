@@ -1,9 +1,18 @@
 # Evaluacion5
 Sistema Basico de Evaluacion
 
+Basado en algunos ejercicios del sitio de capacitación en línea [edureka!](https://www.edureka.co/) he desarrollado una aplicación que funciona como un sistema muy básico de evaluación.
+
+El objetivo, más allá del sentido académico, era satisfacer una necesidad especifica de un órgano gubernamental que hasta el presente ha carecido por completo de apoyo y guía apropiada en lo que respecta al área de sistemas.
+
+Las principales limitantes que he tenido que afrontar en esta labor (la mayoría insustentables) han sido:
+- Utilizar Netbeans como IDE.
+- Desplegar sobre el servidor de aplicaciones Glassfish.
+- Utilizar una versión no  actualizada de MySQL.
+
 ## Requisitos:
 
-- Crear base de datos con el script create_table.sql
+- Crear la base de datos
 - Cargar los examenes en el catalogo
 - Configurar el acceso a la base de datos
 - Colocar los archivos .xml de los examenes
@@ -122,3 +131,6 @@ realizaremos un update sobre la tabla quiz.users filtrado por el email del usuar
 -- Update quiz.users SET calificacion=NULL where email='david@rengifo.mx';
 
 SELECT * FROM quiz.users;
+
+
+[David Rengifo](http://david.rengifo.mx/) 2017 &#169; Derechos Reservados &middot; Orgullosamente respaldado por: [eRa5](http://era5.mx/).
