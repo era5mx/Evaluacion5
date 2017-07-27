@@ -29,16 +29,16 @@ Para configurar el acceso a la base de datos debemos editar el archivo "dbConnec
 originalmente ubicado en WEB-INF pero que puede ubicarse en alguna ruta externa al proyecto,  
 y colocar los datos apropiados:
 
-*jdbc.driver=com.mysql.jdbc.Driver
-*jdbc.server=****
-*jdbc.port=****
-*jdbc.schema=quiz
-*jdbc.username=****
-*jdbc.password=****
-*jdbc.useUnicode=true
-*jdbc.useJDBCCompliantTimezoneShift=true
-*jdbc.useLegacyDatetimeCode=false
-*jdbc.serverTimezone=UTC
+- jdbc.driver=com.mysql.jdbc.Driver
+- jdbc.server=****
+- jdbc.port=****
+- jdbc.schema=quiz
+- jdbc.username=****
+- jdbc.password=****
+- jdbc.useUnicode=true
+- jdbc.useJDBCCompliantTimezoneShift=true
+- jdbc.useLegacyDatetimeCode=false
+- jdbc.serverTimezone=UTC
 
 #### Verificando el acceso a la base de datos
 
