@@ -60,6 +60,8 @@ Uno de los prerequisitos para el funcionamiento de la aplicacion es la colocacio
 Se deben preparar los archivo de examenes (XML) y colocarse en la ruta definida.
 Se incluye en la carpeta sample-evaluaciones algunos archivos que pueden utilizarse como plantilla para esta labor.
 
+NOTA: Hay que cuidar de mantener la estrutura correcta en los XMLs, 
+    además de recordar que el indice que indica la respuesta correcta es el numero de la respuesta menos uno (-1).
 
 ## Configurando la aplicacion
 
