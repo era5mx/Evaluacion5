@@ -11,6 +11,22 @@ Sistema Basico de Evaluacion
 ## Creando la base de datos
 
 Uno de los prerequisitos para el funcionamiento de la aplicacion es la creacion de la base de datos
+Hay que ejecutar el script "create_table.sql" localizado en la carpeta "sql" del proyecto.
+
+## Verificando catalogo de examenes
+
+Uno de los prerequisitos para el funcionamiento de la aplicacion es la carga del catalogo de examenes.
+En el script "create_table.sql" localizado en la carpeta "sql" del proyecto contamos con un ejemplo para realizar dicha tarea.
+Para verificar que el catalogo se encuentra cargado podemos realizar una consulta sobre la tabla quiz.examenes
+
+SELECT * FROM quiz.examenes;
+
+NOTA: Los nombres de los examenes deben corresponderse con los nombres (sin sufijo) de los xml.
+
+## Verificando el acceso a la base de datos
+
+Para comprobar que hayamos configurado apropiadamente el acceso a la base de datos contamos con un JUnit 
+DatabaseConnectionFactoryTest. Al ejecutarlo deberia de ejecutar satisfactoriamente.
 
 ## Archivos de examenes
 
@@ -18,14 +34,6 @@ Uno de los prerequisitos para el funcionamiento de la aplicacion es la colocacio
 Se deben preparar los archivo de examenes (XML) y colocarse en la ruta definida.
 Se incluye en la carpeta sample-evaluaciones algunos archivos que pueden utilizarse como plantilla para esta labor.
 
-## Verificando catalogo de examenes
-
-Uno de los prerequisitos para el funcionamiento de la aplicacion es la carga del catalogo de examenes
-Para verificar que el catalogo se encuentra cargado podemos realizar una consulta sobre la tabla quiz.examenes
-
-SELECT * FROM quiz.examenes;
-
-NOTA: Los nombres de los examenes deben corresponderse con los nombres (sin sufijo) de los xml
 
 ## Retirando calificacion
 
