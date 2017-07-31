@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,6 +27,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import mx.rengifo.evaluacion.util.Constante;
+import mx.rengifo.evaluacion.util.Message;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -35,7 +38,13 @@ import org.apache.commons.lang3.StringUtils;
 @WebServlet("/checkRegister")
 public class RegistrationController extends HttpServlet {
 
+    /** Constante de Serializacion */
     private static final long serialVersionUID = 1L;
+    
+    /**
+     * Query para el alta de usuarios
+     */
+    private static final String INSERT_INTO_USERS = "INSERT INTO users (`username`,`email`,`password`,`exam`,`calificacion`) values (?,?,?,?,?)";
     
     /**
      * Logger
@@ -69,7 +78,7 @@ public class RegistrationController extends HttpServlet {
             PreparedStatement ps = null;
             try {
                 con.setAutoCommit(false);
-                ps = con.prepareStatement("INSERT INTO users (`username`,`email`,`password`,`exam`,`calificacion`) values (?,?,?,?,?)");
+                ps = con.prepareStatement(INSERT_INTO_USERS);
                 ps.setString(1, username);
                 ps.setString(2, email);
                 ps.setString(3, password);
@@ -79,13 +88,12 @@ public class RegistrationController extends HttpServlet {
                 con.commit();
 
             } catch (SQLException sqe) {
-                sqe.printStackTrace();
-                System.out.println("Error : Mientras se insertaba el registro en la base de datos");
+                if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_INSERT, sqe);}
             } finally {
                 try {
                     con.close();
                 } catch (SQLException se) {
-                    System.out.println("Error : Mientras se cerraba la conexion");
+                    if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_CLOSE_CONNECTION, se);}
                 }
             }
 
@@ -93,7 +101,7 @@ public class RegistrationController extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsps/regSuccess.jsp");
             dispatcher.forward(request, response);
         } else {
-            System.out.println("parametros invalidos");
+            if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Parametros invalidos");}
             request.setAttribute("errorMessage", "<br><br>Todos los campos son obligatorios.<br>Debe utilizar un correo valido y seleccionar un rol.");
             RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/register.jsp");
             rd.forward(request, response);

@@ -41,9 +41,7 @@ import org.apache.commons.lang3.StringUtils;
 @WebServlet("/checkLogin")
 public class LoginController extends HttpServlet {
 
-    /**
-     * Constante de serializaacion
-     */
+    /** Constante de Serializacion */
     private static final long serialVersionUID = 1L;
            
     /**
@@ -71,11 +69,11 @@ public class LoginController extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        System.out.println("username = [" + username + "]");
-        System.out.println("password = [" + password + "]");
+        if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "username = [{0}]", username);}
+        if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "password = [{0}]", password);}
+
         Connection con = DatabaseConnectionFactory.createConnection();
         ResultSet set = null;
-        //int i = 0;
         String exam ="";
 
         PreparedStatement ps = null;
@@ -91,33 +89,26 @@ public class LoginController extends HttpServlet {
             }
 
             if (StringUtils.isNotBlank(exam)) {
-                System.out.println("acceso exitoso");
+                if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Acceso exitoso");}
                 request.getSession().setAttribute("user", username);
                 request.getSession().setAttribute("exam", exam);
                 request.getRequestDispatcher("/WEB-INF/jsps/home.jsp").forward(request, response);
             } else {
-                System.out.println("acceso invalido");
-                request.setAttribute("errorMessage", "<br/>Usuario y/o Contraseña invalido(s). <br/>Si ya realizó el examen su usuario estará bloqueado.");
+                if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Acceso invalido");}
+                request.setAttribute("errorMessage", "<br><br>Usuario y/o Contrase&ntilde;a invalido(s). <br>Si ya realiz&oacute; el examen su usuario estar&aacute; bloqueado.");
                 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/login.jsp");
                 rd.forward(request, response);
             }
 
         } catch (SQLException sqe) {
-                System.out.println(Message.ERROR_MESSAGE_SELECT);
                 if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_SELECT, sqe);}
         } finally {
             try {
-                if (set != null && !set.isClosed()) {
-                    set.close();
-                }
-                if (ps != null && !ps.isClosed()) {
-                    ps.close();
-                }
-                if(con!=null && !con.isClosed()) {
-                    con.close();
-                }
+                if (set != null && !set.isClosed()) { set.close(); }
+                if (ps != null && !ps.isClosed()) { ps.close(); }
+                if(con!=null && !con.isClosed()) { con.close(); }
             } catch (SQLException se) {
-                System.out.println("Error : Mientras se cerraba la conexion");
+                if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_CLOSE_CONNECTION, se);}
             }
         }
     }

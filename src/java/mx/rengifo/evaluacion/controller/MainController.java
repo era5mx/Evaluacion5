@@ -32,6 +32,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = { "/inicio", "/login", "/register", "/takeExam", "/takeExam2", "/takeExam3", "/logout" })
 public class MainController extends HttpServlet {
     
+    /** Constante de Serializacion */
     private static final long serialVersionUID = 1L;
     
     /**

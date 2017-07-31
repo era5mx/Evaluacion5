@@ -13,6 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta name="description" content="Resultados de la segunda secci&oacute;n de la evaluaci&oacute;n">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
         <style type="text/css">
             body {
@@ -25,11 +26,6 @@
     <body>
 
         <div style="position:absolute;left:500px;top:70px">
-            <!--
-            <h3 style="align-content: center">Resultados de la segunda secci&oacute;n de la evaluaci&oacute;n</h3>
-            -->
-
-            <!-- Logica para guardar el resultado -->
 
             <!-- Preparando las respuestas y cargandolas al map -->
             <%
@@ -114,19 +110,19 @@
 
                     } catch (SQLException sqe) {
                         sqe.printStackTrace();
-                        System.out.println("Error : While Inserting record in database");
+                        System.out.println(Message.ERROR_MESSAGE_INSERT);
                     } finally {
                         try {
                             con.close();
                         } catch (SQLException se) {
-                            System.out.println("Error : While Closing Connection");
+                            System.out.println(Message.ERROR_MESSAGE_CLOSE_CONNECTION);
                         }
                     }
                 }
 
             %>
 
-            <h2 align="center"><a href='${pageContext.request.contextPath}/takeExam3'>Ir a siguiente sección del examen</a></h2>
+            <h2 align="center"><a href='${pageContext.request.contextPath}/takeExam3'>Ir a siguiente secci&oacute;n del examen</a></h2>
         </div>
 
     </body>

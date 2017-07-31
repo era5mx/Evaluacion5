@@ -46,6 +46,11 @@ public class Exam {
      * Query para persistir los resultados
      */
     public static final String INSERT_INTO_QUIZRESULTADOS = "INSERT INTO `quiz`.`resultados` (`username`,`pregunta`,`resultado`) VALUES (?,?,?)";
+    
+    /**
+     * Query para persistir la calificacion de la primera seccion
+     */
+    public static final String UPDATE_EXAM_CALIFICACION = "UPDATE `quiz`.`users` SET exam=?, calificacion=? WHERE username = ?";
 
     /**
      * Logger

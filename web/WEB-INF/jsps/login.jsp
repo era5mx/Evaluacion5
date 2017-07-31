@@ -11,20 +11,18 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
     <style type="text/css">
-body {
-	background: url("${pageContext.request.contextPath}/images/background/background-<% out.print(Constante.BACKGROUND); %>.jpg");
-}
-.user-icon {
-	top:153px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
-	background: rgba(65,72,72,0.75) url('${pageContext.request.contextPath}/images/icon/user-icon.png') no-repeat center;	
-}
+        body {
+                background: url("${pageContext.request.contextPath}/images/background/background-<% out.print(Constante.BACKGROUND); %>.jpg");
+        }
+        .user-icon {
+                top:153px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+                background: rgba(65,72,72,0.75) url('${pageContext.request.contextPath}/images/icon/user-icon.png') no-repeat center;	
+        }
 
-.pass-icon {
-	top:201px;
-	background: rgba(65,72,72,0.75) url('${pageContext.request.contextPath}/images/icon/pass-icon.png') no-repeat center;
-}
-
-
+        .pass-icon {
+                top:201px;
+                background: rgba(65,72,72,0.75) url('${pageContext.request.contextPath}/images/icon/pass-icon.png') no-repeat center;
+        }
     </style>
     <script src="${pageContext.request.contextPath}/js/onsubmit_event.js" type="text/javascript"></script>
 
@@ -39,8 +37,8 @@ body {
 </ul>
 </div>
 
-<div style="position:absolute;left:500px;top:90px">
-No tienes una cuenta, pulsa aquí para <a href='${pageContext.request.contextPath}/register'>Registrar</a>
+<div style="position:absolute;left:500px;top:90px;font-family:Arial">
+    No tienes una cuenta, pulsa aqu&iacute; para <a href='${pageContext.request.contextPath}/register'>Registrar</a>
 </div>
 
 <div id="wrapper">
@@ -55,7 +53,7 @@ No tienes una cuenta, pulsa aquí para <a href='${pageContext.request.contextPath
 		<div class="content">
 		<input id="username" name="username" type="text" class="input username" placeholder="Usuario" />
 		<div class="user-icon"></div>
-		<input id="password" name="password" type="password" class="input password" placeholder="Contraseña" />
+		<input id="password" name="password" type="password" class="input password" placeholder="Contrase&ntilde;a" />
 		<div class="pass-icon"></div>		
 		</div>
 
@@ -70,13 +68,13 @@ No tienes una cuenta, pulsa aquí para <a href='${pageContext.request.contextPath
 
 
 </div>
-		<div style="position:absolute;left:500px;color:red">
-                ${requestScope.errorMessage}
-                </div>
-<div class="gradient">
 
+<div style="position:absolute;left:500px;color:red">
+${requestScope.errorMessage}
 </div>
 
+<div class="gradient">
+</div>
 
 </body>
 </html>

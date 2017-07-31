@@ -3,13 +3,16 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %> 
 <%@ page import="mx.rengifo.evaluacion.util.DatabaseConnectionFactory" %>
-<%@ page import="mx.rengifo.evaluacion.util.Constante"%>
+<%@ page import="mx.rengifo.evaluacion.Exam" %>
+<%@ page import="mx.rengifo.evaluacion.util.Message" %>
+<%@ page import="mx.rengifo.evaluacion.util.Constante" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="description" content="Resultados de la primera secci&oacute;n de la evaluaci&oacute;n">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
     <style type="text/css">
             body {
@@ -17,14 +20,11 @@
             }
 
 </style>
-<title><% out.println(Constante.TITLE_GRAL); %> &middot; Resultados</title>
+<title><% out.println(Constante.TITLE_GRAL); %> &middot; Resultados 1</title>
 </head>
 <body>
 
 <div style="position:absolute;left:500px;top:70px">
-<!--
-<h3 style="align-content: center">Resultados del Quiz</h3>
--->
 
 <!-- 
 <table border=1>
@@ -74,7 +74,7 @@
     PreparedStatement ps = null;
     try {
         con.setAutoCommit(false);
-        ps = con.prepareStatement("UPDATE users SET exam=?, calificacion=? WHERE username = ?");
+        ps = con.prepareStatement(Exam.UPDATE_EXAM_CALIFICACION);
         ps.setString(1, exam);
         ps.setString(2, result);
         ps.setString(3, user);
@@ -83,26 +83,17 @@
 
     } catch (SQLException sqe) {
         sqe.printStackTrace();
-        System.out.println("Error : Mientras se insertaba el registro en la base de datos");
+        System.out.println(Message.ERROR_MESSAGE_INSERT);
     } finally {
         try {
             con.close();
         } catch (SQLException se) {
-            System.out.println("Error : Mientras se cerraba la conexion");
+            System.out.println(Message.ERROR_MESSAGE_CLOSE_CONNECTION);
         }
     }
 %>
 
-<!-- 
-< c :if test="{requestScope.result >= 5}">
-   <h3 align="center">Aprobado</h3>
-< / c:if>
-< c :if test="{requestScope.result < 5}">
-   <h3 align="center">Reprobado</h3>
-< / c:if>
--->
-
-<h2 align="center"><a href='${pageContext.request.contextPath}/takeExam2'>Ir a siguiente sección del examen</a></h2>
+<h2 align="center"><a href='${pageContext.request.contextPath}/takeExam2'>Ir a siguiente secci&oacute;n del examen</a></h2>
 </div>
 
 </body>

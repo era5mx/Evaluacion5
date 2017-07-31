@@ -1,9 +1,9 @@
 # Evaluacion5
-Sistema Basico de Evaluacion
+Sistema B&aacute;sico de Evaluaci&oacute;n
 
-Basado en algunos ejercicios del sitio de capacitación en línea [edureka!](https://www.edureka.co/) he desarrollado una aplicación que funciona como un sistema muy básico de evaluación.
+Basado en algunos ejercicios del sitio de capacitaci&oacute;n en l&iacute;nea [edureka!](https://www.edureka.co/) he desarrollado una aplicaci&oacute;n que funciona como un sistema muy b&aacute;sico de evaluaci&oacute;n.
 
-El objetivo, más allá del sentido académico, era satisfacer una necesidad especifica de un órgano gubernamental que hasta el presente ha carecido por completo de apoyo y guía apropiada en lo que respecta al área de sistemas.
+El objetivo, más allá del sentido académico, era satisfacer una necesidad especifica de un &oacute;rgano gubernamental que hasta el presente ha carecido por completo de apoyo y guía apropiada en lo que respecta al área de sistemas.
 
 Las principales limitantes que he tenido que afrontar en esta labor (la mayoría insustentables) han sido:
 - Utilizar Netbeans como IDE.
@@ -12,21 +12,23 @@ Las principales limitantes que he tenido que afrontar en esta labor (la mayoría
 
 ## Requisitos:
 
-- Crear la base de datos
-- Cargar los examenes en el catalogo
-- Configurar el acceso a la base de datos
-- Colocar los archivos .xml de los examenes
+- Crear la base de datos.
+- Cargar los ex&aacute;menes en el catalogo.
+- Configurar el acceso a la base de datos.
+- Colocar los archivos .xml correspondiente a la primera sección de los ex&aacute;menes.
+- Editar el archivo exam2.jsp correspondiente a la segunda sección (Preguntas de Ordenamiento y Relaci&oacute;n) de los ex&aacute;menes.
+- Editar el archivo exam3.jsp correspondiente a la tercera sección (Preguntas Abiertas) de los ex&aacute;menes.
 
 ### Creando la base de datos
 
-Uno de los prerequisitos para el funcionamiento de la aplicacion es la creacion de la base de datos
+Uno de los prerequisitos para el funcionamiento de la aplicaci&oacute;n es la creaci&oacute;n de la base de datos
 Hay que ejecutar el script "create_table.sql" localizado en la carpeta "sql" del proyecto.
 
 ### Verificando catalogo de examenes
 
-Uno de los prerequisitos para el funcionamiento de la aplicacion es la carga del catalogo de examenes.
+Otro de los prerequisitos para el funcionamiento de la aplicaci&oacute;n es la carga del catalogo de examenes.
 En el script "create_table.sql" localizado en la carpeta "sql" del proyecto contamos con un ejemplo para realizar dicha tarea.
-Para verificar que el catalogo se encuentra cargado podemos realizar una consulta sobre la tabla quiz.examenes
+Para verificar que el catalogo se encuentra cargado podemos realizar una consulta sobre la tabla "quiz.examenes".
 
 SELECT * FROM quiz.examenes;
 
@@ -56,17 +58,26 @@ DatabaseConnectionFactoryTest. Al ejecutarlo deberia de ejecutar satisfactoriame
 
 ### Archivos de examenes
 
-Uno de los prerequisitos para el funcionamiento de la aplicacion es la colocacion de los archivos de examenes
-Se deben preparar los archivo de examenes (XML) y colocarse en la ruta definida.
-Se incluye en la carpeta sample-evaluaciones algunos archivos que pueden utilizarse como plantilla para esta labor.
+Para el funcionamiento de la aplicacion debemos preparar los archivos de ex&aacute;menes (XML) y colocarlos en la ruta definida en la clase mx.rengifo.evaluacion.util.Constante.
+En la carpeta sample-evaluaciones se incluyen algunos archivos que pueden utilizarse como plantilla para esta labor.
 
 NOTA: Hay que cuidar de mantener la estrutura correcta en los XMLs, 
-    además de recordar que el indice que indica la respuesta correcta es el numero de la respuesta menos uno (-1).
+    adem&aacute;s de recordar que el &iacute;ndice que indica la respuesta correcta es el numero de la respuesta menos uno (-1).
+
+### Editar el archivo exam2.jsp
+
+La segunda secci&oacute;n de los ex&aacute;menes son preguntas de ordenamiento y relaci&oacute;n las cuales est&aacute;n escritas en el archivo exam2.jsp
+Hay que editar el archivo para ajustar las preguntas y opciones de respuesta antes de realizar la compilaci&oacute;n, empaquetado y despliegue del WAR.
+
+### Editar el archivo exam3.jsp
+
+La tercera sección de los ex&aacute;menes son preguntas abiertas las cuales est&aacute;n escritas en el archivo exam3.jsp
+Hay que editar el archivo para ajustar las preguntas y opciones de respuesta antes de realizar la compilaci&oacute;n, empaquetado y despliegue del WAR.
 
 ## Configurando la aplicacion
 
-La aplicacion no esta preparada para ser configurada de manera dinamica. 
-Las configuraciones deben realizarse previas a la compilacion, empaquetado y despliegue,
+La aplicacion NO est&aacute; preparada para ser configurada de manera din&aacute;mica. 
+Las configuraciones deben realizarse previas a la compilaci&oacute;n, empaquetado y despliegue,
 ajustando los valores en la clase: mx.rengifo.evaluacion.util.Constante
 
 ### Configurando el Inicio
@@ -76,30 +87,30 @@ Solo hay que ajustar el valor de la constante URL
 
 ### Configurando el Background
 
-La aplicacion permite configurar el background a utilizar. 
+La aplicaci&oacute;n permite configurar el background a utilizar. 
 Puede elegir entre dos opciones: white | gray
 
 Solo hay que ajustar el valor de la constante BACKGROUND
 
-NOTA: Para incorporar otra opcion debe contarse con una imagen background-{color}.jpg
+NOTA: Para incorporar otra opci&oacute;n debe contarse con una imagen background-{color}.jpg
      en la carpeta images/background
 
 ### Configurando el Titulo
 
-La aplicacion permite configurar el titulo a utilizar. 
+La aplicacion permite configurar el t&iacute;tulo a utilizar. 
 
 Solo hay que ajustar el valor de la constante TITLE_GRAL
 
 ### Configurando el Sufijo a utilizar
 
-La aplicacion permite configurar el sufijo utilizado en el nombrado de las evaluaciones
+La aplicaci&oacute;n permite configurar el sufijo utilizado en el nombrado de las evaluaciones
 Los archivos xml de las evaluciones deben nombrarse con este sufijo
 
 Solo hay que ajustar el valor de la constante SUFFIX
 
 ### Configurando la ubicacion del archivo properties
 
-La aplicacion permite configurar la ubicacion del archivo properties donde se configura el acceso a la base de datos
+La aplicaci&oacute;n permite configurar la ubicacion del archivo properties donde se configura el acceso a la base de datos
 
 Solo hay que ajustar el valor de la constante PATH_PROPERTIES
 
@@ -107,7 +118,7 @@ Nota: Debe incluir '\\' al final
 
 ### Configurando la ubicacion de los archivos de las evaluaciones
 
-La aplicacion permite configurar la ubicacion de los archivos de las evaluaciones
+La aplicaci&oacute;n permite configurar la ubicacion de los archivos de las evaluaciones
 
 Solo hay que ajustar el valor de la constante PATH_EVALUATIONS
 
@@ -115,7 +126,7 @@ Nota: Debe incluir '\\' al final
 
 ### Habilitando / Deshabilitando el log de las excepciones manejadas
 
-La aplicacion permite habilitar el log de las excepciones manejadas para labores de revisión,
+La aplicaci&oacute;n permite habilitar el log de las excepciones manejadas para labores de revisi&oacute;n,
 o deshabilitarlo para ambientes productivos.
 
 Solo hay que ajustar el valor de la constante DEBUG_ENABLED
@@ -124,10 +135,10 @@ Solo hay que ajustar el valor de la constante DEBUG_ENABLED
 ## NOTAS: Retirando calificacion
 
 Una vez que un usuario ha realizado un examen, 
-se le asigna una calificación y no podrá tomar nuevamente el examen.
-Si por algún motivo se requiere que el usuario tome nuevamente el examen,
+se le asigna una calificación y no podr&aacute; tomar nuevamente el examen.
+Si por alg&uacute;n motivo se requiere que el usuario tome nuevamente el examen,
 o si acaso estamos realizando labores de desarrollo o pruebas, 
-requeriremos retirar la calificación del usuario. Para ello, 
+requeriremos retirar la calificaci&oacute;n del usuario. Para ello, 
 realizaremos un update sobre la tabla quiz.users filtrado por el email del usuario.
 
 -- Update quiz.users SET calificacion=NULL where email='david@rengifo.mx';

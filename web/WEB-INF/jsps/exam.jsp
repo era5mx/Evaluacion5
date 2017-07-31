@@ -15,10 +15,9 @@
 
 </head>
 <body>
-<div style="position:absolute;left:50px;top:20px">
+<div style="position:absolute;left:50px;top:20px;font-family:Arial">
 <%
   int currentQuestion=((Exam)request.getSession().getAttribute("currentExam")).getCurrentQuestion();
- // System.out.println("Question Number "+currentQuestion+ " retrieved ");
  %>
 Pregunta actual ${sessionScope.quest.questionNumber+1} / 51
 </div>
@@ -28,25 +27,20 @@ Pregunta actual ${sessionScope.quest.questionNumber+1} / 51
    if(currentQuestion >= 0 && currentQuestion < 41)
    {
  %>
-<div style="position:absolute;left:280px;top:20px">
-<span><strong>Seleccion simple: Elije la opción correcta</strong></span></div>
+<div style="position:absolute;left:280px;top:20px;font-family:Arial">
+    <span><strong>Seleccion simple: Elije la opci&oacute;n correcta</strong></span>
+</div>
 
 <%} %>
 <!-- End - Seleccion multiple (41) -->
- 
-<!-- Begin - Ordenamietnto (1) -->
-<!-- End - Ordenamiento (1) -->
- 
-<!-- Begin - Relacion (2) -->
-<!-- End - Relacion (2) -->
 
 <!-- Begin - Verdadero / Falso (9) -->
  <%
    if(currentQuestion >= 41 && currentQuestion < 50)
    {
  %>
-<div style="position:absolute;left:280px;top:20px">
-<span><strong>Verdadero / Falso: Indica si la afirmación es verdadera o falsa.</strong></span></div>
+<div style="position:absolute;left:280px;top:20px;font-family:Arial">
+    <span><strong>Verdadero / Falso: Indica si la afirmaci&oacute;n es verdadera o falsa.</strong></span></div>
 <%} %>
 <!-- End - Verdadero / Falso (9) -->
  
@@ -55,45 +49,42 @@ Pregunta actual ${sessionScope.quest.questionNumber+1} / 51
    if(currentQuestion ==50)
    {
  %>
-<div style="position:absolute;left:280px;top:20px">
-<span><strong>Mejor opción: Elije la mejor opción de las propuestas.</strong></span></div>
+<div style="position:absolute;left:280px;top:20px;font-family:Arial">
+    <span><strong>Mejor opci&oacute;n: Elije la mejor opci&oacute;n de las propuestas.</strong></span></div>
 <%} %>
 <!-- End - Mejor Opcion  (1) -->
  
-<!-- Begin - Preguntas abiertas (2) -->
-<!-- End - Preguntas abiertas (2) -->
- 
 <!-- Pregunta -->
- <div style="position:absolute;width:1000px;padding:25px;
-  height: 200px;border: 1px solid green ;left:100px;top:60px">
-<span>${sessionScope.quest.question}</span><br/><br/>
+<div style="position:absolute;width:1000px;padding:25px;height:200px;border:1px solid green;left:100px;top:60px;font-family:Arial">
+    
+    <span>${sessionScope.quest.question}</span><br><br>
 
-<!-- Opciones -->
-<form action="exam" method="post" >
- <c:forEach var="choice" items="${sessionScope.quest.questionOptions}" varStatus="counter">
-     <c:if test="${not empty choice}">
-        <input type="radio" name="answer" value="${counter.count}" >${choice}  <br/>
-     </c:if>
- </c:forEach> <br/> 
- 
- 
-<!-- Navegador --> 
- <%
-   if(currentQuestion > 0)
-   {
- %>
- <button type="submit" name="action" value="ANTERIOR">&#171; ANTERIOR</button>
- <%} %>
- 
- <%
-   if(currentQuestion < 50)
-   {
- %>
- <button type="submit" name="action" value="SIGUIENTE">SIGUIENTE &#187</button>
- <%} %>
- <button type="submit" name="action" value="FIN">FIN &#9632;</button>
+    <!-- Opciones -->
+    <form action="exam" method="post" >
+     <c:forEach var="choice" items="${sessionScope.quest.questionOptions}" varStatus="counter">
+         <c:if test="${not empty choice}">
+            <input type="radio" name="answer" value="${counter.count}" >${choice}  <br/>
+         </c:if>
+     </c:forEach> <br/> 
 
-</form>
+
+    <!-- Navegador --> 
+     <%
+       if(currentQuestion > 0)
+       {
+     %>
+     <button type="submit" name="action" value="ANTERIOR">&#171; ANTERIOR</button>
+     <%} %>
+
+     <%
+       if(currentQuestion < 50)
+       {
+     %>
+     <button type="submit" name="action" value="SIGUIENTE">SIGUIENTE &#187;</button>
+     <%} %>
+     <button type="submit" name="action" value="FIN">FIN &#9632;</button>
+
+    </form>
 </div>
 
 </body>

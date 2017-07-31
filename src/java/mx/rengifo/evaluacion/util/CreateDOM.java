@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -39,7 +40,7 @@ public class CreateDOM {
     private static final Logger logger = Logger.getLogger(CreateDOM.class.getName());
 
     /**
-     *
+     * Obtiene el DOM del archivo XML
      * @param test
      * @return
      * @throws SAXException
@@ -50,12 +51,10 @@ public class CreateDOM {
     public static Document getDOM(String test) throws SAXException, ParserConfigurationException, IOException, URISyntaxException {
         Document dom = null;
         File quizFile = new File(Constante.PATH_EVALUATIONS + test + Constante.SUFFIX + ".xml");
-        System.out.println("Quiz File Absolute Path " + quizFile.getAbsolutePath());
+        if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Quiz File Absolute Path = [{0}]", quizFile.getAbsolutePath());}
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
-        
-        
         
         try {
             dom = db.parse(quizFile);
@@ -63,7 +62,7 @@ public class CreateDOM {
                 dom.getDocumentElement().normalize(); 
             }
         } catch (FileNotFoundException fileNotFound) {
-            System.out.println(Message.ERROR_EXAM_NOT_FOUND + fileNotFound);
+            if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_EXAM_NOT_FOUND, fileNotFound);}
         }
         
         return dom;
