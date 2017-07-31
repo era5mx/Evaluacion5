@@ -95,7 +95,7 @@ Solo hay que ajustar el valor de la constante BACKGROUND
 NOTA: Para incorporar otra opci&oacute;n debe contarse con una imagen background-{color}.jpg
      en la carpeta images/background
 
-### Configurando el Titulo
+### Configurando el T&iacute;tulo
 
 La aplicaci&oacute;n permite configurar el t&iacute;tulo a utilizar. 
 
@@ -118,7 +118,7 @@ Nota: Debe incluir '\\' al final
 
 ### Configurando la ubicaci&oacute;n de los archivos de las evaluaciones
 
-La aplicaci&oacute;n permite configurar la ubicacion de los archivos de las evaluaciones
+La aplicaci&oacute;n permite configurar la ubicaci&oacute;n de los archivos de las evaluaciones
 
 Solo hay que ajustar el valor de la constante PATH_EVALUATIONS
 
