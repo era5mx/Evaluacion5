@@ -62,7 +62,7 @@ public class MainController extends HttpServlet {
 		} else if(request.getRequestURI().equals(
 				applicationContextPath + "/inicio")){
                     response.sendRedirect(Constante.URL);
-                }else if (request.getRequestURI().equals(
+                } else if (request.getRequestURI().equals(
 				applicationContextPath + "/login")) {
 			RequestDispatcher dispatcher = request
 					.getRequestDispatcher("/WEB-INF/jsps/login.jsp");

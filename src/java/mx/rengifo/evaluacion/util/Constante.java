@@ -42,9 +42,14 @@ public class Constante {
     public static final String SUFFIX = "-evaluacion";
 
     /**
-     * URL de inmujeres
+     * URL de inicio
      */
     public static final String URL = "http://www.era5.mx/";
+    
+    /**
+     * URL de error
+     */
+    public static final String URL_ERROR = "https://sphera5.github.io/Evaluacion5/";
 
     /**
      * Background (white | gray)

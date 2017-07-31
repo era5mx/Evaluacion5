@@ -15,20 +15,18 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
     <style type="text/css">
-            body {
-                background: url("${pageContext.request.contextPath}/images/background/background-<% out.print(Constante.BACKGROUND); %>.jpg");
-            }
-.user-icon {
-	top:153px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
-	background: rgba(65,72,72,0.75) url('${pageContext.request.contextPath}/images/icon/user-icon.png') no-repeat center;	
-}
+        body {
+            background: url("${pageContext.request.contextPath}/images/background/background-<% out.print(Constante.BACKGROUND); %>.jpg");
+        }
+        .user-icon {
+                top:153px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+                background: rgba(65,72,72,0.75) url('${pageContext.request.contextPath}/images/icon/user-icon.png') no-repeat center;	
+        }
 
-.pass-icon {
-	top:201px;
-	background: rgba(65,72,72,0.75) url('${pageContext.request.contextPath}/images/icon/pass-icon.png') no-repeat center;
-}
-
-
+        .pass-icon {
+                top:201px;
+                background: rgba(65,72,72,0.75) url('${pageContext.request.contextPath}/images/icon/pass-icon.png') no-repeat center;
+        }
     </style>
     <script src="${pageContext.request.contextPath}/js/onsubmit_event.js"></script>
 </head>
@@ -97,7 +95,7 @@
 		</div>
 
 		<div class="footer">		
-		<input type="submit" name="submit" value="Registrar" class="register" />
+		<input type="submit" name="submit" value="Registrar" class="button" />
                 <br />
                 <span>* Todos los campos son obligatorios.</span>
                 

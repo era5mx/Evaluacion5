@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    
     <display-name>Evaluación en línea</display-name>
+    <description>Sistema Básico de Evaluación en Línea</description>
     <welcome-file-list>
         <welcome-file>home</welcome-file>
     </welcome-file-list>
@@ -12,4 +14,36 @@
         <servlet-name>home</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
+
+    <error-page>
+        <!-- Missing login -->
+        <error-code>401</error-code>
+        <location>/error401</location>
+    </error-page>
+    <error-page>
+        <!-- Forbidden directory listing -->
+        <error-code>403</error-code>
+        <location>/error403</location>
+    </error-page>
+    <error-page>
+        <!-- Missing resource -->
+        <error-code>404</error-code>
+        <location>/error404</location>
+    </error-page>
+    <error-page>
+        <!-- Method not allowed -->
+        <error-code>405</error-code>
+        <location>/error405</location>
+    </error-page>
+    <error-page>
+        <!-- Uncaught exception -->
+        <error-code>500</error-code>
+        <location>/error500</location>
+    </error-page>
+    <error-page>
+        <!-- Unsupported servlet method -->
+        <error-code>503</error-code>
+        <location>/error503</location>
+    </error-page>
+    
 </web-app>

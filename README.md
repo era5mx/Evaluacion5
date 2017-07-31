@@ -3,9 +3,9 @@ Sistema B&aacute;sico de Evaluaci&oacute;n
 
 Basado en algunos ejercicios del sitio de capacitaci&oacute;n en l&iacute;nea [edureka!](https://www.edureka.co/) he desarrollado una aplicaci&oacute;n que funciona como un sistema muy b&aacute;sico de evaluaci&oacute;n.
 
-El objetivo, más allá del sentido académico, era satisfacer una necesidad especifica de un &oacute;rgano gubernamental que hasta el presente ha carecido por completo de apoyo y guía apropiada en lo que respecta al área de sistemas.
+El objetivo, más all&aacute; del sentido acad&eacute;mico, era satisfacer una necesidad especifica de un &oacute;rgano gubernamental que hasta el presente ha carecido por completo de apoyo y guía apropiada en lo que respecta al área de sistemas.
 
-Las principales limitantes que he tenido que afrontar en esta labor (la mayoría insustentables) han sido:
+Las principales limitantes que he tenido que afrontar en esta labor (la mayor&iacute;a insustentables) han sido:
 - Utilizar Netbeans como IDE.
 - Desplegar sobre el servidor de aplicaciones Glassfish.
 - Utilizar una versión no  actualizada de MySQL.
@@ -32,7 +32,7 @@ Para verificar que el catalogo se encuentra cargado podemos realizar una consult
 
 SELECT * FROM quiz.examenes;
 
-NOTA: Los nombres de los examenes deben corresponderse con los nombres (sin sufijo) de los xml.
+NOTA: Los nombres de los ex&aacute;menes deben corresponderse con los nombres (sin sufijo) de los xml.
 
 ### Configurando el acceso a la base de datos
 
@@ -54,14 +54,14 @@ y colocar los datos apropiados:
 #### Verificando el acceso a la base de datos
 
 Para comprobar que hayamos configurado apropiadamente el acceso a la base de datos contamos con un JUnit 
-DatabaseConnectionFactoryTest. Al ejecutarlo deberia de ejecutar satisfactoriamente.
+DatabaseConnectionFactoryTest. Al ejecutarlo deber&iacute;a de ejecutar satisfactoriamente.
 
 ### Archivos de examenes
 
 Para el funcionamiento de la aplicacion debemos preparar los archivos de ex&aacute;menes (XML) y colocarlos en la ruta definida en la clase mx.rengifo.evaluacion.util.Constante.
 En la carpeta sample-evaluaciones se incluyen algunos archivos que pueden utilizarse como plantilla para esta labor.
 
-NOTA: Hay que cuidar de mantener la estrutura correcta en los XMLs, 
+NOTA: Hay que cuidar de mantener la estructura correcta en los XMLs, 
     adem&aacute;s de recordar que el &iacute;ndice que indica la respuesta correcta es el numero de la respuesta menos uno (-1).
 
 ### Editar el archivo exam2.jsp
@@ -71,7 +71,7 @@ Hay que editar el archivo para ajustar las preguntas y opciones de respuesta ant
 
 ### Editar el archivo exam3.jsp
 
-La tercera sección de los ex&aacute;menes son preguntas abiertas las cuales est&aacute;n escritas en el archivo exam3.jsp
+La tercera secci&oacute;n de los ex&aacute;menes son preguntas abiertas las cuales est&aacute;n escritas en el archivo exam3.jsp
 Hay que editar el archivo para ajustar las preguntas y opciones de respuesta antes de realizar la compilaci&oacute;n, empaquetado y despliegue del WAR.
 
 ## Configurando la aplicacion
@@ -82,7 +82,7 @@ ajustando los valores en la clase: mx.rengifo.evaluacion.util.Constante
 
 ### Configurando el Inicio
 
-La aplicacion permite configurar el URL o enlace que deseamos utilizar como inicio.
+La aplicaci&oacute;n permite configurar el URL o enlace que deseamos utilizar como inicio.
 Solo hay que ajustar el valor de la constante URL
 
 ### Configurando el Background
@@ -97,7 +97,7 @@ NOTA: Para incorporar otra opci&oacute;n debe contarse con una imagen background
 
 ### Configurando el Titulo
 
-La aplicacion permite configurar el t&iacute;tulo a utilizar. 
+La aplicaci&oacute;n permite configurar el t&iacute;tulo a utilizar. 
 
 Solo hay que ajustar el valor de la constante TITLE_GRAL
 
@@ -116,7 +116,7 @@ Solo hay que ajustar el valor de la constante PATH_PROPERTIES
 
 Nota: Debe incluir '\\' al final
 
-### Configurando la ubicacion de los archivos de las evaluaciones
+### Configurando la ubicaci&oacute;n de los archivos de las evaluaciones
 
 La aplicaci&oacute;n permite configurar la ubicacion de los archivos de las evaluaciones
 
@@ -134,7 +134,7 @@ Solo hay que ajustar el valor de la constante DEBUG_ENABLED
 
 ## NOTAS
 
-### Retirando calificacion
+### Retirando calificaci&oacute;n
 
 Una vez que un usuario ha realizado un examen, 
 se le asigna una calificaci&oacute;n y no podr&aacute; tomar nuevamente el examen.
