@@ -132,10 +132,12 @@ o deshabilitarlo para ambientes productivos.
 Solo hay que ajustar el valor de la constante DEBUG_ENABLED
 
 
-## NOTAS: Retirando calificacion
+## NOTAS
+
+### Retirando calificacion
 
 Una vez que un usuario ha realizado un examen, 
-se le asigna una calificación y no podr&aacute; tomar nuevamente el examen.
+se le asigna una calificaci&oacute;n y no podr&aacute; tomar nuevamente el examen.
 Si por alg&uacute;n motivo se requiere que el usuario tome nuevamente el examen,
 o si acaso estamos realizando labores de desarrollo o pruebas, 
 requeriremos retirar la calificaci&oacute;n del usuario. Para ello, 
@@ -145,6 +147,12 @@ realizaremos un update sobre la tabla quiz.users filtrado por el email del usuar
 
 SELECT * FROM quiz.users;
 
+### Cambiando el rol
+
+Es posible que por alg&uacute;n motivo se requiera cambiar el rol de un usuario. Para ello, 
+realizaremos un update sobre la tabla quiz.users filtrado por el email del usuario.
+
+-- Update quiz.users SET exam='rol4' where email='david@rengifo.mx';
 
 ---
 [David Rengifo](http://david.rengifo.mx/) 2017 &#169; Derechos Reservados &middot; Orgullosamente respaldado por: [eRa5](http://era5.mx/).
