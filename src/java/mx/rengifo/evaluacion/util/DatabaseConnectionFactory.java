@@ -14,8 +14,6 @@
  */
 package mx.rengifo.evaluacion.util;
 
-import mx.rengifo.evaluacion.util.Message;
-import mx.rengifo.evaluacion.util.Constante;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -46,30 +44,29 @@ public class DatabaseConnectionFactory {
     public static Connection createConnection() {
 
         Connection con = null;
+        Properties properties=new Properties();
+        if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Se cargar\u00e1 el archivo de properties desde: [{0}dbConnection.properties]", Constante.PATH_PROPERTIES);}
         try {
-            Properties properties=new Properties();
-            System.out.println("Se cargara el archivo de properties desde: "+Constante.PATH_PROPERTIES+"dbConnection.properties");
-            FileInputStream in = new FileInputStream(Constante.PATH_PROPERTIES+"dbConnection.properties");
-            properties.load(in);
-            System.out.println("Se cargó el archivo de properties");
-            in.close();
+            //Se prueba que carge el arhivo de properties
+            try (FileInputStream in = new FileInputStream(Constante.PATH_PROPERTIES+"dbConnection.properties")) {
+                properties.load(in);
+                if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Se carg\u00f3 el archivo de properties");}
+            }
 
             Class.forName(properties.getProperty("jdbc.driver"));
-            String dbURL = "jdbc:mysql://".concat(properties.getProperty("jdbc.server"))
-                    .concat(StringUtils.isNotBlank(properties.getProperty("jdbc.port"))?":".concat(properties.getProperty("jdbc.port")):"")
-                    .concat("/").concat(properties.getProperty("jdbc.schema"))
-                    .concat("?useUnicode=").concat(properties.getProperty("jdbc.useUnicode"))
-                    .concat("&useJDBCCompliantTimezoneShift=").concat(properties.getProperty("jdbc.useJDBCCompliantTimezoneShift"))
-                    .concat("&useLegacyDatetimeCode=").concat(properties.getProperty("jdbc.useLegacyDatetimeCode"))
-                    .concat("&serverTimezone=").concat(properties.getProperty("jdbc.serverTimezone"));
-            System.out.println("Se preparó la URL: [" + dbURL + "]");
-            con = DriverManager.getConnection(dbURL, properties.getProperty("jdbc.username"), properties.getProperty("jdbc.password"));
+            String dbURL = "jdbc:mysql://".concat(properties.getProperty("jdbc.server").trim())
+                    .concat(StringUtils.isNotBlank(properties.getProperty("jdbc.port").trim())?":".concat(properties.getProperty("jdbc.port")):"")
+                    .concat("/").concat(properties.getProperty("jdbc.schema").trim())
+                    .concat("?useUnicode=").concat(properties.getProperty("jdbc.useUnicode").trim())
+                    .concat("&useJDBCCompliantTimezoneShift=").concat(properties.getProperty("jdbc.useJDBCCompliantTimezoneShift").trim())
+                    .concat("&useLegacyDatetimeCode=").concat(properties.getProperty("jdbc.useLegacyDatetimeCode").trim())
+                    .concat("&serverTimezone=").concat(properties.getProperty("jdbc.serverTimezone").trim());
+            if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Se prepar\u00f3 la URL: [{0}]", dbURL);}
+            con = DriverManager.getConnection(dbURL, properties.getProperty("jdbc.username"), properties.getProperty("jdbc.password").trim());
         } catch (ClassNotFoundException ex) {
-            System.out.println(Message.ERROR_DRIVER);
             if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_DRIVER, ex);}
             System.exit(1);
         } catch (SQLException sqe) {
-            System.out.println(Message.ERROR_MESSAGE_OPEN_CONNECTION);
             if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_OPEN_CONNECTION, sqe);}
         } catch (IOException ex) {
             if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_IO, ex);}
