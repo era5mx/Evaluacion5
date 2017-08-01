@@ -62,9 +62,14 @@ public class LoginController extends HttpServlet {
     }
 
     /**
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
      * response)
      */
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String username = request.getParameter("username");
@@ -74,42 +79,60 @@ public class LoginController extends HttpServlet {
 
         Connection con = DatabaseConnectionFactory.createConnection();
         ResultSet set = null;
-        String exam ="";
-
         PreparedStatement ps = null;
-        try {
-            ps = con.prepareStatement(SELECT_EXAM_FROM_USERS);
-            ps.setString(1, username);
-            ps.setString(2, password);
-            ps.executeQuery();
-            set = ps.getResultSet();
-
-            while (set.next()) {
-                exam = set.getString(1);
-            }
-
-            if (StringUtils.isNotBlank(exam)) {
-                if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Acceso exitoso");}
-                request.getSession().setAttribute("user", username);
-                request.getSession().setAttribute("exam", exam);
-                request.getRequestDispatcher("/WEB-INF/jsps/home.jsp").forward(request, response);
-            } else {
-                if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Acceso invalido");}
-                request.setAttribute("errorMessage", "<br><br>Usuario y/o Contrase&ntilde;a invalido(s). <br>Si ya realiz&oacute; el examen su usuario estar&aacute; bloqueado.");
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/login.jsp");
-                rd.forward(request, response);
-            }
-
-        } catch (SQLException sqe) {
-                if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_SELECT, sqe);}
-        } finally {
+        String exam ="";
+        
+        if(null!=con){
             try {
-                if (set != null && !set.isClosed()) { set.close(); }
-                if (ps != null && !ps.isClosed()) { ps.close(); }
-                if(con!=null && !con.isClosed()) { con.close(); }
-            } catch (SQLException se) {
-                if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_CLOSE_CONNECTION, se);}
+                ps = con.prepareStatement(SELECT_EXAM_FROM_USERS);
+                ps.setString(1, username);
+                ps.setString(2, password);
+                ps.executeQuery();
+                set = ps.getResultSet();
+
+                while (set.next()) {
+                    exam = set.getString(1);
+                }
+
+                if (StringUtils.isNotBlank(exam)) {
+                    if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Acceso exitoso");}
+                    request.getSession().setAttribute("user", username);
+                    request.getSession().setAttribute("exam", exam);
+                    request.getRequestDispatcher("/WEB-INF/jsps/home.jsp").forward(request, response);
+                } else {
+                    String s = "<br><br>Usuario y/o Contrase&ntilde;a invalido(s). <br>Si ya realiz&oacute; el examen su usuario estar&aacute; bloqueado.";
+                    this.accesoInvalido(request,response,s);
+                }
+
+            } catch (SQLException sqe) {
+                    if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_SELECT, sqe);}
+            } finally {
+                try {
+                    if (set != null && !set.isClosed()) { set.close(); }
+                    if (ps != null && !ps.isClosed()) { ps.close(); }
+                    if(!con.isClosed()) { con.close(); }
+                } catch (SQLException se) {
+                    if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_CLOSE_CONNECTION, se);}
+                }
             }
         }
+        else {
+           String s = Message.ERROR_MESSAGE_OPEN_CONNECTION;
+           this.accesoInvalido(request,response,s); 
+        }
+    }
+    
+    /**
+     * Maneja el acceso invalido
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException 
+     */
+    private void accesoInvalido(HttpServletRequest request, HttpServletResponse response, String errorMessage) throws ServletException, IOException{
+        if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Acceso invalido");}
+        request.setAttribute("errorMessage", errorMessage);
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/login.jsp");
+        rd.forward(request, response);
     }
 }

@@ -76,35 +76,40 @@ public class RegistrationController extends HttpServlet {
         if (valido) {
             Connection con = DatabaseConnectionFactory.createConnection();
             PreparedStatement ps = null;
-            try {
-                con.setAutoCommit(false);
-                ps = con.prepareStatement(INSERT_INTO_USERS);
-                ps.setString(1, username);
-                ps.setString(2, email);
-                ps.setString(3, password);
-                ps.setString(4, exam);
-                ps.setString(5, null);
-                ps.executeUpdate();
-                con.commit();
-
-            } catch (SQLException sqe) {
-                if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_INSERT, sqe);}
-            } finally {
+            
+            if(null!=con){
                 try {
-                    con.close();
-                } catch (SQLException se) {
-                    if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_CLOSE_CONNECTION, se);}
+                    con.setAutoCommit(false);
+                    ps = con.prepareStatement(INSERT_INTO_USERS);
+                    ps.setString(1, username);
+                    ps.setString(2, email);
+                    ps.setString(3, password);
+                    ps.setString(4, exam);
+                    ps.setString(5, null);
+                    ps.executeUpdate();
+                    con.commit();
+
+                } catch (SQLException sqe) {
+                    if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_INSERT, sqe);}
+                } finally {
+                    try {
+                        con.close();
+                    } catch (SQLException se) {
+                        if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, Message.ERROR_MESSAGE_CLOSE_CONNECTION, se);}
+                    }
                 }
+                request.setAttribute("newUser", username);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsps/regSuccess.jsp");
+                dispatcher.forward(request, response);
+            }
+            else{
+                String s = Message.ERROR_MESSAGE_OPEN_CONNECTION;
+                this.accesoInvalido(request, response, email);
             }
 
-            request.setAttribute("newUser", username);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsps/regSuccess.jsp");
-            dispatcher.forward(request, response);
         } else {
-            if(Constante.DEBUG_ENABLED) {logger.log(Level.INFO, "Parametros invalidos");}
-            request.setAttribute("errorMessage", "<br><br>Todos los campos son obligatorios.<br>Debe utilizar un correo valido y seleccionar un rol.");
-            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/register.jsp");
-            rd.forward(request, response);
+            String s = "<br><br>Todos los campos son obligatorios.<br>Debe utilizar un correo valido y seleccionar un rol.";
+            this.accesoInvalido(request, response, email);
         }
 
     }
@@ -127,6 +132,20 @@ public class RegistrationController extends HttpServlet {
             valido = true;
         }
         return valido;
+    }
+    
+    /**
+     * Maneja el acceso invalido
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException 
+     */
+    private void accesoInvalido(HttpServletRequest request, HttpServletResponse response, String errorMessage) throws ServletException, IOException{
+        if(Constante.DEBUG_ENABLED) {logger.log(Level.SEVERE, "Error de Conexion o Parametros invalido");}
+        request.setAttribute("errorMessage", errorMessage);
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/login.jsp");
+        rd.forward(request, response);
     }
 
 }
